@@ -6,12 +6,11 @@ import matplotlib.pyplot as plt
 data = pd.read_csv("/Users/victorfriedrich/Downloads/Test Kopie/footprintData.csv", engine='python', error_bad_lines=False)
 
 # Konstanten
-EqF_f = 1.4
-EqF_c = 2.2
-EqF_p = 0.5
+EqF_f = 1.29
+EqF_c = 2.52
+EqF_p = 0.46
 F_co2 = 0.3
-S_co2 = 0.4
-
+S_co2 = 0.268
 
 # Vereinfachte Berechnung des EFs
 data["Footprint"] =  (data["Land Use Beef"] * 0.8 * EqF_p) + (data["Land Use Beef"] * 0.2 * EqF_c) + data["GHG Emissions Beef"] * (1-F_co2)/S_co2 * EqF_f
